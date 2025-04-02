@@ -1,0 +1,36 @@
+.top-stories-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  
+  .story-card .story-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .story-category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+  }
+  
+  .story-info {
+    font-size: 0.9rem;
+  }
+  
+  .additional-story img {
+    border-radius: 5px;
+  }
+  
+  .see-all-posts {
+    font-weight: bold;
+    color: #000000;
+  }
+  .card-title{
+    color: black;
+  }

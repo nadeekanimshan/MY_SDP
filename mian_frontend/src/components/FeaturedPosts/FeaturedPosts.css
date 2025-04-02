@@ -1,0 +1,45 @@
+.featured-title {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .post-card {
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .post-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .post-image {
+    position: relative;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .post-category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+  
+  .card-title {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  
+  .post-info {
+    font-size: 0.9em;
+  }
+  
+  .see-all-posts {
+    font-weight: bold;
+    color: #000000;
+  }
+  

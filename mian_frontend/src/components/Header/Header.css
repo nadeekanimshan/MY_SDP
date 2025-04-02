@@ -1,0 +1,150 @@
+/* 🌟 Hero Section */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 110px;
+  gap: 20px;
+  
+  /* White Background */
+  background: url("/public/25101.jpg") no-repeat center center/cover;
+  color: black; /* Adjust text color for contrast */
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+/* 📌 Left Side - Text */
+.hero-text {
+  width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color:#ffc402;
+  text-align:start;
+ 
+}
+
+.hero-text h2 {
+  font-size: 64px;
+  color: #333;
+  margin-top: 30px;
+  text-align: justify;
+  
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #6f6f6f;
+  margin-top: 15px;
+  text-align: justify;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-right: 20px;
+}
+
+.hero-button:hover {
+  background-color: #333;
+}
+
+/* 🎠 Right Side - Image Carousel */
+.hero-carousel {
+  width: 45%; /* Adjusted width */
+  height: 500px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Ensure images fit properly */
+.swiper-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fill the space */
+  border-radius: 10px;
+}
+
+/* 🎯 Swiper fade effect */
+.swiper-container .swiper-slide {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.swiper-container .swiper-slide-active {
+  opacity: 1;
+}
+
+/* 📱 Responsive Design */
+
+/* For tablets */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 10px;
+  }
+
+  .hero-text {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .hero-carousel {
+    width: 100%;
+    height: 400px;
+  }
+
+  .swiper-container {
+    height: 100%;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-text h2 {
+    font-size: 20px;
+    text-align: start;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .hero-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .hero-carousel {
+    height: 300px;
+  }
+
+  .swiper-container {
+    height: 100%;
+  }
+}

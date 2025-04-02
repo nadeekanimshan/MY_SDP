@@ -1,0 +1,22 @@
+/* Custom CSS for spacing under fixed navbar */
+.app-container {
+  padding-top: 80px; /* Adjust this value based on the navbar height */
+}
+/* App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  padding: 0 0px;
+}
+
+footer {
+  padding: 0;
+}
+.title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 72px;
+}

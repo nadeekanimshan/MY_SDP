@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Add to your Navbar.css */
+.brand-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #ffc402;
+  font-size: 1.8rem;
+  margin-left: 10px;
+  
+  
+}
+
+/* Update the logo class */
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Rest of your existing CSS remains the same */
+
+.custom-navbar {
+    width: 100%;
+    height: 80px;
+  }
+  
+  .custom-navbar .container-fluid {
+    max-width: 87%;
+  }
+  
+  /* Increase font size and add spacing between navbar links */
+  .custom-nav .nav-link {
+    font-size: 16px; /* Increased font size */
+    margin-right: 40px; /* Increased spacing between nav items */
+    font-weight: 600;
+    color: rgb(197, 197, 197);
+    font-family: 'Poppins', sans-serif; /* Applied Poppins font */
+
+  }
+  .custom-nav .nav-link:hover{
+    text-decoration: underline;
+  }
+  .logo{
+    width: 40px;
+    height: 50px;
+  }
+  .btn-e-magazine {
+    margin-left: auto; /* Keep the button on the right */
+    font-size: 16px; /* Optional: increase button font size */
+    background-color: #ffffff;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-color: #ac834f;
+    color: black;
+  }
+  .btn-e-magazine:hover{
+    border-color: #ac834f;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index:999;
+    
+  }
+  @media (max-width: 768px) and (min-width: 250px){
+    .custom-navbar .container-fluid {
+        max-width: 100%;
+      }
+      .navbar-logo {
+        width: 90px;
+        height: 40px;
+      }
+      .custom-nav .nav-link {
+      
+        color: rgb(255, 255, 255);
+        margin-top: 20px;
+      }
+      .btn-e-magazine{
+        margin-top: 20px;
+      }
+      .logo{
+        width: 160px;
+        height: 40px;
+      }
+  } 
+  @media (max-width: 991.4px) and (min-width: 768.5px){
+    .custom-navbar .container-fluid {
+        max-width: 90%;
+      }
+      .navbar-logo {
+        width: 90px;
+        height: 40px;
+      }
+      .custom-nav .nav-link {
+      
+        color: rgb(255, 255, 255);
+        margin-top: 20px;
+        font-size: 24px;
+      }
+      .btn-e-magazine{
+        margin-top: 30px;
+        margin-left: auto; /* Keep the button on the right */
+        font-size: 24px; /* Optional: increase button font size */
+        background-color: #ac834f;
+        padding: 10px 20px;
+        font-weight: 500;
+      }
+      
+  } 
+  @media (max-width: 1106px) and (min-width: 991.5px){
+    .custom-nav .nav-link {
+        font-size: 16px; /* Increased font size */
+        margin-right: 10px; 
+        font-weight: 500;
+      }
+    }
+    .navbar-logo {
+        width: 120px;
+        height: 55px;
+      }
+      
+      @media (max-width: 576px) {
+        .navbar-logo {
+          width: 90px;
+          height: 40px;
+        }
+      }
+      /* Custom dark menu icon */
+.navbar-toggler {
+  border: none; /* Remove border */
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: none; /* Remove Bootstrap default icon */
+  width: 30px;
+  height: 3px;
+  background-color: black; /* Dark color */
+  display: block;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: black; /* Dark color */
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+}
+
+/* When toggler is clicked, animate bars into an "X" */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}

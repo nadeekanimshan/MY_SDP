@@ -1,0 +1,57 @@
+.editor-choice-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .slider-nav button {
+    background-color: transparent;
+    border: none;
+    color: #ff0055;
+  }
+  
+  .slider-nav button:hover {
+    color: #ff3366;
+  }
+  
+  .editor-post-card {
+    border: none;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .editor-post-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .post-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .post-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+  }
+  
+  .post-info {
+    font-size: 0.85rem;
+  }
+  

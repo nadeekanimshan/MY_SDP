@@ -1,0 +1,51 @@
+.see-all-posts-link {
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .see-all-posts-link:hover {
+    color: #0056b3;
+  }
+  
+  .recent-posts-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .recent-post-card {
+    transition: transform 0.2s ease;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .recent-post-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .recent-post-card .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .recent-post-card .card-body {
+    padding: 20px;
+  }
+  
+  .recent-post-card .card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .recent-post-card .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    border-color: #ac834f;
+    border: solid 1px #ac834f;
+  }
+  

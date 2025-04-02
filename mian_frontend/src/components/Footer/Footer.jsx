@@ -1,0 +1,68 @@
+import "./Footer.css";
+
+import React from "react";
+import { assest } from "../../assest/assest";
+
+const Footer = () => {
+  return (
+    <div className="footer" id="footer">
+      <div className="footer-content">
+        <div className="footer-content-left">
+          <img src={assest.expo} alt="FMS Education Logo" className="footer-logo" />
+          <img src={assest.MITLogo} alt="FMS Education Logo" className="footer-logo3" />
+          <img src={assest.unilogo} alt="FMS Education Logo" className="footer-logo2" />
+          
+          <p>
+            Your premier destination for quality education, expert guidance, and innovative solution, serving with dedication and excellence.
+          </p>
+          <div className="footer-social-icons">
+            <a href="https://www.facebook.com/Exposition.MIT?mibextid=kFxxJD" target="_blank" rel="noopener noreferrer">
+              <img src={assest.facebook_icon} alt="Facebook" />
+            </a>
+            <a href="https://www.instagram.com/exposition_lk?igsh=bjRiYnp0NGZsMHlt" target="_blank" rel="noopener noreferrer">
+              <img src={assest.twitter_icon} alt="Twitter" />
+            </a>
+            <a href="https://www.linkedin.com/company/theexposition/" target="_blank" rel="noopener noreferrer">
+              <img src={assest.linkedin_icon} alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+        <div className="footer-content-center">
+          <h2>Links</h2>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#my-5">About Us</a></li>
+            <li><a href="#container">Blog</a></li>
+           
+            <li><a href="#footer">Contact</a></li>
+          </ul>
+        </div>
+        <div className="footer-content-right">
+          <h2>Get in Touch</h2>
+          <ul>
+            <li>Department of Industrial Management,</li>
+            <li>Faculty of Science,</li>
+            <li>University of Kelaniya,</li>
+            <li>Sri Lanka.</li>
+            <div className="contact">
+              <a href="tel:+94717577400" className="contact1">
+                <img src={assest.phone} alt="Phone" />
+                +94717577400  <br /> +94762357045
+              </a>
+            </div>
+            <div className="contact">
+              <a href="mailto:exposition.edify@gmail.com" className="contact">
+                <img src={assest.email} alt="Email" />
+                exposition.edify@gmail.com
+              </a>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <p className="footer-copyright">© 2024 Exposition™. All Rights Reserved.</p>
+    </div>
+  );
+};
+
+export default Footer;
