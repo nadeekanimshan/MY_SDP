@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaRocket, FaLightbulb, FaUsers } from 'react-icons/fa';
-
+import { assest } from '../../assest/assest';
 const About = () => {
   return (
     <section className="py-5 bg-light">
@@ -9,7 +9,7 @@ const About = () => {
           {/* Image Column */}
           <div className="col-lg-6 mb-4 mb-lg-0">
             <img 
-              src="https://via.placeholder.com/600x400" 
+              src={assest.L1}
               alt="Our Team" 
               className="img-fluid rounded shadow"
             />
@@ -17,9 +17,9 @@ const About = () => {
           
           {/* Content Column */}
           <div className="col-lg-6">
-            <h2 className="display-5 fw-bold mb-4">About Our Company</h2>
+            <h2 className="display-5 fw-bold mb-4">About Us</h2>
             <p className="lead mb-4">
-              We're a team of passionate professionals dedicated to delivering exceptional results through innovation and expertise.
+            At Audio Diary Studio, we're a team of passionate artists, producers, and educators committed to helping voices be heard—literally and figuratively. Whether you're here to sharpen your musical skills, record your next big hit, or share your story through sound, we bring innovation, heart, and expertise to every beat.
             </p>
             
             {/* Key Points */}
@@ -29,8 +29,8 @@ const About = () => {
                   <FaRocket className="text-primary" />
                 </div>
                 <div>
-                  <h5 className="mb-0">Innovative Solutions</h5>
-                  <small className="text-muted">Cutting-edge technology for modern problems</small>
+                  <h5 className="mb-0">Innovative Soundscapes</h5>
+                  <small className="text-muted">State-of-the-art tools to craft your perfect audio experience</small>
                 </div>
               </div>
               
@@ -39,8 +39,8 @@ const About = () => {
                   <FaUsers className="text-primary" />
                 </div>
                 <div>
-                  <h5 className="mb-0">Experienced Team</h5>
-                  <small className="text-muted">Industry experts with years of experience</small>
+                  <h5 className="mb-0">Creative Expression</h5>
+                  <small className="text-muted">Custom music and training solutions made just for you</small>
                 </div>
               </div>
               
@@ -49,14 +49,14 @@ const About = () => {
                   <FaLightbulb className="text-primary" />
                 </div>
                 <div>
-                  <h5 className="mb-0">Creative Approach</h5>
-                  <small className="text-muted">Unique solutions tailored to your needs</small>
+                  <h5 className="mb-0">Skilled Professionals</h5>
+                  <small className="text-muted">A team of seasoned artists, producers, and trainers by your side</small>
                 </div>
               </div>
             </div>
             
             <button className="btn btn-primary px-4">
-              Learn More
+              Studio Staff
             </button>
           </div>
         </div>

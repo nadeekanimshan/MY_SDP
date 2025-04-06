@@ -9,12 +9,8 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-content-left">
           <img src={assest.expo} alt="FMS Education Logo" className="footer-logo" />
-          <img src={assest.MITLogo} alt="FMS Education Logo" className="footer-logo3" />
-          <img src={assest.unilogo} alt="FMS Education Logo" className="footer-logo2" />
-          
           <p>
-            Your premier destination for quality education, expert guidance, and innovative solution, serving with dedication and excellence.
-          </p>
+          Your premier destination for artistic growth, professional guidance, and creative innovation—delivering every session with passion, precision, and purpose.          </p>
           <div className="footer-social-icons">
             <a href="https://www.facebook.com/Exposition.MIT?mibextid=kFxxJD" target="_blank" rel="noopener noreferrer">
               <img src={assest.facebook_icon} alt="Facebook" />
@@ -31,8 +27,8 @@ const Footer = () => {
           <h2>Links</h2>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#my-5">About Us</a></li>
-            <li><a href="#container">Blog</a></li>
+            <li><a href="#my-5">Services</a></li>
+            <li><a href="#container">About</a></li>
            
             <li><a href="#footer">Contact</a></li>
           </ul>

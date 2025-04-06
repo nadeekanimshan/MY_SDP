@@ -11,7 +11,7 @@ const FeaturedPosts = () => {
   return (
     <div className="container my-5">
       <div className="text-center mb-4">
-        <h2 className="featured-title">Featured Posts</h2>
+        <h2 className="featured-title">Our Services</h2>
       </div>
       <div className="row justify-content-center">
         {featuredPosts.map((post) => (
