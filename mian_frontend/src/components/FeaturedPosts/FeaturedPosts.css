@@ -1,45 +1,39 @@
+.post-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.post-image {
+  min-height: 200px;
+  position: relative;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.post-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .featured-title {
-    font-size: 2em;
-    font-weight: bold;
-  }
-  
-  .post-card {
-    overflow: hidden;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-  }
-  
-  .post-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .post-image {
-    position: relative;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .post-category {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 5px 10px;
-    font-size: 0.8em;
-  }
-  
-  .card-title {
-    font-size: 1.1em;
-    font-weight: bold;
-  }
-  
-  .post-info {
-    font-size: 0.9em;
-  }
-  
-  .see-all-posts {
-    font-weight: bold;
-    color: #000000;
-  }
-  
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.featured-title:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background: #ac834f;
+  bottom: 0;
+  left: 25%;
+}

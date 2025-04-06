@@ -14,7 +14,7 @@ import Header from './components/Header/Header';
 import RecentPosts from './components/RecentPosts/RecentPosts';
 import ScrollToTopButton from './components/Contex/ScrollToTopButton';
 import TopStories from './components/TopStories/TopStories';
-
+import About from './components/About/About';
 function ScrollToTop() {
   const location = useLocation();
 
@@ -43,6 +43,10 @@ function App() {
         
         </Routes>
         <Routes>
+        <Route path="/" element={<About/>} />
+        
+        </Routes>
+        <Routes>
         <Route path="/" element={<FeaturedPosts />} />
         
         </Routes>
@@ -58,6 +62,7 @@ function App() {
         <Route path="/" element={<Gallery/>} />
         
         </Routes>
+        
         {/* Main content with padding */}
         <div className="main-content">
           <Routes>
