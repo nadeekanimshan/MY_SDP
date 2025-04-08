@@ -36,9 +36,8 @@ const Footer = () => {
         <div className="footer-content-right">
           <h2>Get in Touch</h2>
           <ul>
-            <li>Department of Industrial Management,</li>
-            <li>Faculty of Science,</li>
-            <li>University of Kelaniya,</li>
+            <li>Audio Diary Studio,</li>
+            <li>Boralasgamuwa,</li>
             <li>Sri Lanka.</li>
             <div className="contact">
               <a href="tel:+94717577400" className="contact1">
@@ -49,14 +48,14 @@ const Footer = () => {
             <div className="contact">
               <a href="mailto:exposition.edify@gmail.com" className="contact">
                 <img src={assest.email} alt="Email" />
-                exposition.edify@gmail.com
+                AudioDiaryStudio@gmail.com
               </a>
             </div>
           </ul>
         </div>
       </div>
       <hr />
-      <p className="footer-copyright">© 2024 Exposition™. All Rights Reserved.</p>
+      <p className="footer-copyright">© 2025 AudioDiary™. All Rights Reserved.</p>
     </div>
   );
 };

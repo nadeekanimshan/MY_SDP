@@ -31,7 +31,8 @@
   font-size: 64px;
   color: #333;
   margin-top: 30px;
-  text-align: justify;
+  text-align: left;
+  word-spacing: 12px;
   
 }
 
