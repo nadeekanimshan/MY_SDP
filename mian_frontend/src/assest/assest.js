@@ -1,13 +1,12 @@
-import H1 from './H1.png'
+import H1 from './H1.jpg'
 import H10 from './H10.jpg'
 import H11 from './H11.webp'
-import H2 from './H2.png'
+import H2 from './H2.jpg'
 import H20 from './MAS Logo.png'
 import H21 from './Connex logo.png'
-import H3 from './H3.png'
-import H4 from './H4.png'
-import H5 from './H5.png'
-import H6 from './H6.png'
+import H3 from './H3.jpg'
+import H4 from './H4.jpg'
+import H5 from './H5.jpg'
 import H7 from './H7.jpeg'
 import H8 from './H8.jpg'
 import H9 from './H9.png'
@@ -58,8 +57,8 @@ import twitter_icon from './twitter_icon.png'
 import unilogo from './unilogo.png'
 import up from './up.png'
 
-export const  assest = {
-    expo,MITLogo,email,phone,facebook_icon,twitter_icon,linkedin_icon,td,H1,H2,H3,td2,up,admin,H5,H4,H6,H7,H8,H9,H10,H11,unilogo,HH11,
-    L1,L2,L3,L4,L5,L6,L7,L9,L10,L11,L12,L13,L14,L15,a,p14,L16,L18,L17,td3,td4,td5,td6,td7,td8,td9,td10,td11,td12,td13,td14,td15,td16,H20,H21
-}
+export const assest = {
+    expo, MITLogo, email, phone, facebook_icon, twitter_icon, linkedin_icon, td, H1, H2, H3, td2, up, admin, H5, H4, H7, H8, H9, H10, H11, unilogo, HH11,
+    L1, L2, L3, L4, L5, L6, L7, L9, L10, L11, L12, L13, L14, L15, a, p14, L16, L18, L17, td3, td4, td5, td6, td7, td8, td9, td10, td11, td12, td13, td14, td15, td16, H20, H21
+};
 

@@ -12,14 +12,11 @@ const Footer = () => {
           <p>
           Your premier destination for artistic growth, professional guidance, and creative innovation—delivering every session with passion, precision, and purpose.          </p>
           <div className="footer-social-icons">
-            <a href="https://www.facebook.com/Exposition.MIT?mibextid=kFxxJD" target="_blank" rel="noopener noreferrer">
+            <a href="https://web.facebook.com/audiodiarystudios" target="_blank" rel="noopener noreferrer">
               <img src={assest.facebook_icon} alt="Facebook" />
             </a>
-            <a href="https://www.instagram.com/exposition_lk?igsh=bjRiYnp0NGZsMHlt" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/audio_diary_studios/" target="_blank" rel="noopener noreferrer">
               <img src={assest.twitter_icon} alt="Twitter" />
-            </a>
-            <a href="https://www.linkedin.com/company/theexposition/" target="_blank" rel="noopener noreferrer">
-              <img src={assest.linkedin_icon} alt="LinkedIn" />
             </a>
           </div>
         </div>
@@ -42,13 +39,13 @@ const Footer = () => {
             <div className="contact">
               <a href="tel:+94717577400" className="contact1">
                 <img src={assest.phone} alt="Phone" />
-                +94717577400  <br /> +94762357045
+                +9477 028 4814  <br /> +9477 789 5363
               </a>
             </div>
             <div className="contact">
-              <a href="mailto:exposition.edify@gmail.com" className="contact">
+              <a href="mailto:audiodiaryrecords@gmail.com" className="contact">
                 <img src={assest.email} alt="Email" />
-                AudioDiaryStudio@gmail.com
+                audiodiaryrecords@gmail.com
               </a>
             </div>
           </ul>

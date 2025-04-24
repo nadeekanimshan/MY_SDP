@@ -11,10 +11,12 @@ import FeaturedPosts from './components/FeaturedPosts/FeaturedPosts';
 import Footer from './components/Footer/Footer';
 import Gallery from './components/Gallery/Gallery';
 import Header from './components/Header/Header';
-import RecentPosts from './components/RecentPosts/RecentPosts';
+
 import ScrollToTopButton from './components/Contex/ScrollToTopButton';
-import TopStories from './components/TopStories/TopStories';
 import About from './components/About/About';
+import AuthForm from './components/Signup/signup';
+import FQ from './components/F&Q/F&Q';
+import AppointmentClient from './components/AppointmentClient/AppointmentClient';
 function ScrollToTop() {
   const location = useLocation();
 
@@ -50,18 +52,20 @@ function App() {
         <Route path="/" element={<FeaturedPosts />} />
         
         </Routes>
+       
         <Routes>
-        <Route path="/" element={<TopStories />} />
-        
-        </Routes>
-        <Routes>
-        <Route path="/" element={<RecentPosts />} />
+        <Route path="/" element={<FQ />} />
         
         </Routes>
         <Routes>
         <Route path="/" element={<Gallery/>} />
         
         </Routes>
+        <Routes>
+        <Route path="/signup" element={<AuthForm/>} />
+        
+        </Routes>
+        
         
         {/* Main content with padding */}
         <div className="main-content">

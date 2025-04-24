@@ -30,9 +30,7 @@ function Gallery() {
         { image: assest.H3 },
         { image: assest.H4 },
         { image: assest.H5 },
-        { image: assest.H6 },
-        { image: assest.H20 },
-        { image: assest.H21 }
+        
       
       ];
 
@@ -91,7 +89,7 @@ function Gallery() {
           />
           <Container style={{ position: 'relative', zIndex: 2 }}>
             <h2 className="gallery-heading">
-            Our Partners
+            Our Memories
             </h2>
             <Slider ref={sliderRef} {...settings}>
               {cardsData.map((card, idx) => (

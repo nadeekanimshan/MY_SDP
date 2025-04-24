@@ -25,7 +25,7 @@ const CustomNavbar = () => {
   };
 
   const handleButtonClick = () => {
-    window.open("https://blog.exposition.lk/", "_blank");
+    navigate('/signup');
   };
 
   return (

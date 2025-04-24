@@ -1,12 +1,29 @@
 import React from 'react';
 import { FaRocket, FaLightbulb, FaUsers } from 'react-icons/fa';
 import { assest } from '../../assest/assest';
+import './About.css'; 
+
 const About = () => {
   return (
     <section className="py-5 bg-light">
       <div className="container">
+        {/* Centered Heading with Gold Underline */}
+        <div className="row text-center mb-5">
+          <div className="col-12">
+            <h2 className="display-5 fw-bold position-relative d-inline-block">
+              About Us
+              <span className="position-absolute bottom-0 start-50 translate-middle-x bg-warning" 
+                    style={{
+                      width: '80px',
+                      height: '3px',
+                      backgroundColor: '#ac834f'
+                    }}></span>
+            </h2>
+          </div>
+        </div>
+
         <div className="row align-items-center">
-          {/* Image Column */}
+          
           <div className="col-lg-6 mb-4 mb-lg-0">
             <img 
               src={assest.L1}
@@ -17,9 +34,8 @@ const About = () => {
           
           {/* Content Column */}
           <div className="col-lg-6">
-            <h2 className="display-5 fw-bold mb-4">About Us</h2>
-            <p className="lead mb-4">
-            At Audio Diary Studio, we're a team of passionate artists, producers, and educators committed to helping voices be heard—literally and figuratively. Whether you're here to sharpen your musical skills, record your next big hit, or share your story through sound, we bring innovation, heart, and expertise to every beat.
+            <p style={{textAlign:'justify'}} className="lead mb-4">
+              At Audio Diary Studio, we're a team of passionate artists, producers, and educators committed to helping voices be heard—literally and figuratively. Whether you're here to sharpen your musical skills, record your next big hit, or share your story through sound, we bring innovation, heart, and expertise to every beat.
             </p>
             
             {/* Key Points */}
