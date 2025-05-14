@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaUser, FaLock, FaEnvelope, FaPhone, FaUserGraduate, FaUserTie } from 'react-icons/fa';
 import { MdPassword, MdLocationCity } from 'react-icons/md';
 import './signup.css';
 
 const AuthForm = () => {
+    const navigate = useNavigate();
     const [isLogin, setIsLogin] = useState(true);
     const [formData, setFormData] = useState({
         name: '',
@@ -12,10 +14,14 @@ const AuthForm = () => {
         confirmPassword: '',
         phone: '',
         address: '',
-        role: 'client' // Default role is client
+        institution: '',
+        course: '',
+        role: 'client'
     });
     const [errors, setErrors] = useState({});
-    const [authMode, setAuthMode] = useState('login-client'); // 'login-client', 'login-student', 'new-client', 'new-student', 'existing-client'
+    const [authMode, setAuthMode] = useState('login-client');
+    const [isLoading, setIsLoading] = useState(false);
+    const [authError, setAuthError] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -45,13 +51,114 @@ const AuthForm = () => {
         return Object.keys(newErrors).length === 0;
     };
 
+    const handleRegister = async () => {
+        setIsLoading(true);
+        setAuthError('');
+        
+        try {
+            const role = authMode.includes('student') ? 'student' : 'client';
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                password: formData.password,
+                confirmPassword: formData.confirmPassword,
+                phone: formData.phone,
+                role: role
+            };
+
+            if (role === 'client') {
+                payload.address = formData.address;
+            } else {
+                payload.institution = formData.institution;
+                payload.course = formData.course;
+            }
+
+            const response = await fetch('http://localhost:4000/api/user/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Registration failed');
+            }
+
+            // Store token in localStorage
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('userRole', data.user.role);
+            
+            // Redirect based on role
+            if (data.user.role === 'client') {
+                navigate('/client/dashboard');
+            } else {
+                navigate('/student/dashboard');
+            }
+            
+        } catch (error) {
+            console.error('Registration error:', error);
+            setAuthError(error.message);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const handleLogin = async () => {
+        setIsLoading(true);
+        setAuthError('');
+        
+        try {
+            const role = authMode.includes('student') ? 'student' : 'client';
+            const payload = {
+                email: formData.email,
+                password: formData.password,
+                role: role
+            };
+
+            const response = await fetch('http://localhost:4000/api/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Login failed');
+            }
+
+            // Store token in localStorage
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('userRole', data.user.role);
+            
+            // Redirect based on role
+            if (data.user.role === 'client') {
+                navigate('/client/dashboard');
+            } else {
+                navigate('/student/dashboard');
+            }
+            
+        } catch (error) {
+            console.error('Login error:', error);
+            setAuthError(error.message);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validate()) {
-            const role = authMode.includes('student') ? 'student' : 'client';
-            const isNewUser = authMode.includes('new');
-            console.log('Form submitted:', { ...formData, role, isNewUser });
-            // Add your authentication logic here
+            if (isLogin) {
+                handleLogin();
+            } else {
+                handleRegister();
+            }
         }
     };
 
@@ -64,7 +171,10 @@ const AuthForm = () => {
                         <button
                             type="button"
                             className={`mode-option ${authMode === 'login-client' ? 'active' : ''}`}
-                            onClick={() => setAuthMode('login-client')}
+                            onClick={() => {
+                                setAuthMode('login-client');
+                                setFormData(prev => ({ ...prev, role: 'client' }));
+                            }}
                         >
                             <FaUserTie className="option-icon" />
                             Client
@@ -72,7 +182,10 @@ const AuthForm = () => {
                         <button
                             type="button"
                             className={`mode-option ${authMode === 'login-student' ? 'active' : ''}`}
-                            onClick={() => setAuthMode('login-student')}
+                            onClick={() => {
+                                setAuthMode('login-student');
+                                setFormData(prev => ({ ...prev, role: 'student' }));
+                            }}
                         >
                             <FaUserGraduate className="option-icon" />
                             Student
@@ -88,7 +201,10 @@ const AuthForm = () => {
                         <button
                             type="button"
                             className={`mode-option ${authMode === 'new-client' ? 'active' : ''}`}
-                            onClick={() => setAuthMode('new-client')}
+                            onClick={() => {
+                                setAuthMode('new-client');
+                                setFormData(prev => ({ ...prev, role: 'client' }));
+                            }}
                         >
                             <FaUserTie className="option-icon" />
                             New Client
@@ -96,7 +212,10 @@ const AuthForm = () => {
                         <button
                             type="button"
                             className={`mode-option ${authMode === 'new-student' ? 'active' : ''}`}
-                            onClick={() => setAuthMode('new-student')}
+                            onClick={() => {
+                                setAuthMode('new-student');
+                                setFormData(prev => ({ ...prev, role: 'student' }));
+                            }}
                         >
                             <FaUserGraduate className="option-icon" />
                             New Student
@@ -104,7 +223,10 @@ const AuthForm = () => {
                         <button
                             type="button"
                             className={`mode-option ${authMode === 'existing-client' ? 'active' : ''}`}
-                            onClick={() => setAuthMode('existing-client')}
+                            onClick={() => {
+                                setAuthMode('existing-client');
+                                setFormData(prev => ({ ...prev, role: 'client' }));
+                            }}
                         >
                             <FaUserTie className="option-icon" />
                             Existing Client
@@ -117,8 +239,11 @@ const AuthForm = () => {
 
     const getSubmitButtonText = () => {
         if (isLogin) {
-            return authMode === 'login-client' ? 'Login as Client' : 'Login as Student';
+            return isLoading 
+                ? 'Logging in...' 
+                : authMode === 'login-client' ? 'Login as Client' : 'Login as Student';
         } else {
+            if (isLoading) return 'Registering...';
             if (authMode === 'new-client') return 'Sign Up as New Client';
             if (authMode === 'new-student') return 'Sign Up as New Student';
             if (authMode === 'existing-client') return 'Continue as Existing Client';
@@ -134,6 +259,7 @@ const AuthForm = () => {
                         onClick={() => {
                             setIsLogin(true);
                             setAuthMode('login-client');
+                            setFormData(prev => ({ ...prev, role: 'client' }));
                         }}
                     >
                         Login
@@ -143,6 +269,7 @@ const AuthForm = () => {
                         onClick={() => {
                             setIsLogin(false);
                             setAuthMode('new-client');
+                            setFormData(prev => ({ ...prev, role: 'client' }));
                         }}
                     >
                         Sign Up
@@ -153,6 +280,8 @@ const AuthForm = () => {
                     <h2 className="auth-title">
                         {isLogin ? 'Welcome Back' : 'Create Account'}
                     </h2>
+
+                    {authError && <div className="auth-error">{authError}</div>}
 
                     {renderModeSelection()}
 
@@ -251,12 +380,44 @@ const AuthForm = () => {
                                         />
                                     </div>
                                 )}
+
+                                {authMode === 'new-student' && (
+                                    <>
+                                        <div className="input-group">
+                                            <div className="input-icon">
+                                                <FaUserGraduate />
+                                            </div>
+                                            <input
+                                                type="text"
+                                                name="institution"
+                                                placeholder="Institution"
+                                                className="form-input"
+                                                value={formData.institution}
+                                                onChange={handleChange}
+                                            />
+                                        </div>
+                                        <div className="input-group">
+                                            <div className="input-icon">
+                                                <FaUserGraduate />
+                                            </div>
+                                            <input
+                                                type="text"
+                                                name="course"
+                                                placeholder="Course"
+                                                className="form-input"
+                                                value={formData.course}
+                                                onChange={handleChange}
+                                            />
+                                        </div>
+                                    </>
+                                )}
                             </>
                         )}
 
                         <button
                             type="submit"
                             className="submit-button"
+                            disabled={isLoading}
                         >
                             {getSubmitButtonText()}
                         </button>
@@ -268,6 +429,7 @@ const AuthForm = () => {
                             onClick={() => {
                                 setIsLogin(!isLogin);
                                 setAuthMode(isLogin ? 'new-client' : 'login-client');
+                                setFormData(prev => ({ ...prev, role: 'client' }));
                             }}
                             className="auth-switch-button"
                         >

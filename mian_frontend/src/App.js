@@ -17,6 +17,9 @@ import About from './components/About/About';
 import AuthForm from './components/Signup/signup';
 import FQ from './components/F&Q/F&Q';
 import AppointmentClient from './components/AppointmentClient/AppointmentClient';
+import AppointmentDetails from './components/AppointmentClient/AppointmentDetails';
+import ClientDashboard from './components/ClientDashboard/ClientDashboard';
+import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 function ScrollToTop() {
   const location = useLocation();
 
@@ -66,6 +69,21 @@ function App() {
         
         </Routes>
         
+        <Routes>
+        <Route path="/AppointmentClient" element={<AppointmentClient />} />
+        </Routes>
+
+        <Routes>
+        <Route path="/AppointmentDetails" element={<AppointmentDetails />} />
+        </Routes>
+
+        <Routes>
+        <Route path="/client/dashboard" element={<ClientDashboard />} />
+        </Routes>
+
+        <Routes>
+        <Route path="/student/dashboard" element={<StudentDashboard />} />
+        </Routes>
         
         {/* Main content with padding */}
         <div className="main-content">

@@ -7,6 +7,7 @@
   color: #ffc402;
   font-size: 1.8rem;
   margin-left: 10px;
+  margin-top: 15px;
   
   
 }
@@ -16,6 +17,8 @@
   width: 40px;
   height: 40px;
   object-fit: contain;
+  margin-top: 15px;
+  
 }
 
 /* Rest of your existing CSS remains the same */
