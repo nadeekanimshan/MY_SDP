@@ -1,6 +1,8 @@
 // src/App.js
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminDashboard from './Components/AdminDashboard/AdminDashboard'; // Adjust path as needed
+// App.js
+import AppointmentsTable from './Components/AppointmentsTable';
 
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
        
 
         {/* Redirect root to admin dashboard (optional) */}
-        
+        <Route path="/AppointmentsTable" element={<AppointmentsTable />} />
       </Routes>
     </Router>
   );

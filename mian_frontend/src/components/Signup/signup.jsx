@@ -65,38 +65,35 @@ const AuthForm = () => {
                 phone: formData.phone,
                 role: role
             };
-
+    
             if (role === 'client') {
                 payload.address = formData.address;
             } else {
                 payload.institution = formData.institution;
                 payload.course = formData.course;
             }
-
-            const response = await fetch('http://localhost:4000/api/user/register', {
+    
+            const response = await fetch('http://localhost:5000/api/user/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(payload)
             });
-
+    
             const data = await response.json();
-
+    
             if (!response.ok) {
                 throw new Error(data.message || 'Registration failed');
             }
-
-            // Store token in localStorage
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('userRole', data.user.role);
-            
-            // Redirect based on role
-            if (data.user.role === 'client') {
-                navigate('/client/dashboard');
-            } else {
-                navigate('/student/dashboard');
-            }
+    
+            // Show success message
+            alert('Registration successful! Please log in.');
+    
+            // Redirect to login page
+            setIsLogin(true);
+            setAuthMode('login-client');
+            setFormData(prev => ({ ...prev, role: 'client' }));
             
         } catch (error) {
             console.error('Registration error:', error);
@@ -118,7 +115,7 @@ const AuthForm = () => {
                 role: role
             };
 
-            const response = await fetch('http://localhost:4000/api/user/login', {
+            const response = await fetch('http://localhost:5000/api/user/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

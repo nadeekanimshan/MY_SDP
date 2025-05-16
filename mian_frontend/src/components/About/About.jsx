@@ -5,7 +5,7 @@ import './About.css';
 
 const About = () => {
   return (
-    <section className="py-5 bg-light">
+    <section id='about' className="py-5 bg-light">
       <div className="container">
         {/* Centered Heading with Gold Underline */}
         <div className="row text-center mb-5">

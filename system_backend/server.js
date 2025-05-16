@@ -4,7 +4,7 @@ import cors from 'cors';
 import pool from './config/db.js'; // Database connection pool
 import userRouter from './routes/UserRouter.js'; // User routes
 import AppointmentRouter from './routes/appointmentRoutes.js'; // Appointment routes
-
+import appointmentRoutes from './routes/appointmentRoutes.js';
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -18,7 +18,7 @@ app.use('/images', express.static('uploads'));
 // API endpoints
 app.use('/api/user', userRouter);
 app.use('/api/appointments', AppointmentRouter);
-
+app.use('/api', appointmentRoutes);
 // Test database connection
 app.get('/test-db', async (req, res) => {
     try {

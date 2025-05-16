@@ -46,7 +46,7 @@ const CustomNavbar = () => {
             <Nav className="mx-auto custom-nav">
               <Nav.Link onClick={() => handleLinkClick('/')}>Home</Nav.Link>
               <Nav.Link onClick={() => handleLinkClick('#footer')}>SERVICES</Nav.Link>
-              <Nav.Link onClick={() => handleLinkClick('/articles')}>ABOUT</Nav.Link>
+              <Nav.Link onClick={() => handleLinkClick('#about')}>ABOUT</Nav.Link>
               <Nav.Link onClick={() => handleLinkClick('#footer')}>CONTACT</Nav.Link>
             </Nav>
             <Button 

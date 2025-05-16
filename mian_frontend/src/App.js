@@ -3,9 +3,8 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
 
-import AllArticles from './components/Allart/AllArticles';
-import ArticleDetail from './components/ArticleDetail/ArticleDetail';
-import { ArticlesProvider } from './components/Contex/ArticlesContext';
+
+
 import CustomNavbar from './components/Navbar/Navbar';
 import FeaturedPosts from './components/FeaturedPosts/FeaturedPosts';
 import Footer from './components/Footer/Footer';
@@ -16,8 +15,7 @@ import ScrollToTopButton from './components/Contex/ScrollToTopButton';
 import About from './components/About/About';
 import AuthForm from './components/Signup/signup';
 import FQ from './components/F&Q/F&Q';
-import AppointmentClient from './components/AppointmentClient/AppointmentClient';
-import AppointmentDetails from './components/AppointmentClient/AppointmentDetails';
+
 import ClientDashboard from './components/ClientDashboard/ClientDashboard';
 import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 function ScrollToTop() {
@@ -38,7 +36,7 @@ function App() {
   ]);
 
   return (
-    <ArticlesProvider>
+  
     <Router>
       <div className="app-container">
         <ScrollToTop/>
@@ -68,15 +66,6 @@ function App() {
         <Route path="/signup" element={<AuthForm/>} />
         
         </Routes>
-        
-        <Routes>
-        <Route path="/AppointmentClient" element={<AppointmentClient />} />
-        </Routes>
-
-        <Routes>
-        <Route path="/AppointmentDetails" element={<AppointmentDetails />} />
-        </Routes>
-
         <Routes>
         <Route path="/client/dashboard" element={<ClientDashboard />} />
         </Routes>
@@ -90,8 +79,8 @@ function App() {
           <Routes>
             
             
-            <Route path="/article/:id" element={<ArticleDetail articles={articles} setArticles={setArticles} />} />
-            <Route path="/articles" element={<AllArticles articles={articles} />} />
+            
+        
           </Routes>
         </div>
         
@@ -100,7 +89,7 @@ function App() {
         <ScrollToTopButton/>
       </div>
     </Router>
-    </ArticlesProvider>
+
     
   );
 }
